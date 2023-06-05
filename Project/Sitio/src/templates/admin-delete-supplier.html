@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "message.html" %}
+
+    <h2 class="text-center">Delete Supplier</h2>
+
+    <form method="POST" class="forms">
+        <input type="text" placeholder="Supplier Name" name="name" class="entry"/>
+        <button class="button">Delete</button>
+    </form>
+{% endblock %}

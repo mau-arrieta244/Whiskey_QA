@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "message.html" %}
+
+    <h2 class="text-center">Update Suscription</h2>
+
+    <h3 class="text-center">1. Short Glass</h3>
+    <h3 class="text-center">2. Gleincairn </h3>
+    <h3 class="text-center">3. Master Diller </h3>
+
+    <form method="POST" class="forms">
+        <input type="integer" placeholder="Suscription Type" name="club_id" class="entry"/>
+        <button class="button">Update</button>
+    </form>
+{% endblock %}

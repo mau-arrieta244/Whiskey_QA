@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Log in{% endblock %}
+
+
+{% block content %}
+    {% include "message.html" %}
+    
+    <h2 class="text-center">Log In</h2>
+    
+    <form method="POST" class="forms">
+        <input type="text" placeholder="User" name="user" class="entry"/>
+        <input type="password" placeholder="password" name="password" class="entry"/>
+        <button class="button">Log In</button>
+    </form>
+{% endblock %}

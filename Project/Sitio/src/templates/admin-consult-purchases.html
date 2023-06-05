@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Consults{% endblock %}
+
+{% block content %}
+    {% include "message.html" %}
+
+    <h2 class="text-center">Consult</h2>
+
+    <div class="consult">
+      <div class="table-container-products">
+        <table class="table" > 
+            <tr>
+              <th>Code</th>
+              <th>Name</th>
+              <th>Country</th>
+              <th>Date</th>
+            </tr>
+            {% for whisky in whiskys %}
+              <tr>
+                <td>{{ whisky[0] }}</td>
+                <td>{{ whisky[1] }}</td>
+                <td>{{ whisky[2] }}</td>
+                <td>{{ whisky[3] }}</td>
+              </tr>
+            {% endfor %}
+        </table>
+      </div>
+  
+      <div class="filters-container">
+        <h2 class="text-center">Filters</h2>
+    
+        <form method="POST" class="forms">
+    
+          <label for="types">Country: </label>
+          <select name="types" id="types" required>
+            <option value="NULL" selected>All</option>
+            <option value="Ireland">Ireland</option>
+            <option value="Scotland">Scotland</option>
+            <option value="USA">USA</option>
+          </select>
+  
+          <label for="date1">Initial date: </label>
+          <input type="date" name="date1" id="date1">
+
+          <label for="date2">Final date: </label>
+          <input type="date" name="date2" id="date2">
+    
+          <button class="submit">Apply</button>
+        </form>
+      </div>
+    </div>
+      
+{% endblock %}

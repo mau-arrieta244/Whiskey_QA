@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "message.html" %}
+
+    <h2 class="text-center">Create Whiskey Stock</h2>
+
+
+    <form method="POST" class="forms">
+        <input type="integer" placeholder="Id Country" name="id_country" class="entry"/>
+        <input type="integer" placeholder="Id Shop" name="id_shop" class="entry"/>
+        <input type="integer" placeholder="Id Whiskey" name="id_whiskey" class="entry"/>
+        <input type="integer" placeholder="Amount" name="amount" class="entry"/>
+      
+        <button class="button">Create</button>
+
+    </form>
+{% endblock %}

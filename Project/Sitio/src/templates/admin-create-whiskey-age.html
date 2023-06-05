@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "message.html" %}
+
+    <h2 class="text-center">Create Whiskey Aged</h2>
+
+    <form method="POST" class="forms">
+        <input type="integer" placeholder="Aged" name="aged" class="entry"/>
+        <button class="button">Create Whiskey Aged</button>
+    </form>
+{% endblock %}

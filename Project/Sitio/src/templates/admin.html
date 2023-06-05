@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Admin{% endblock %}
+
+{% block content %}
+    {% include "message.html" %}
+<div>
+    <h3  class="text-center"> Admin Menu </h3>
+    <div class="table-container">
+        <table class="table">
+            <tr>
+                <tr>
+                    <td width="210" colspan="2" height="22">
+                      <center>
+                        <button type="submit" class="checkout-button" id="checkout-button" name="checkout-button" disabled="disabled"></button>
+                        <a href="/admin/create" class="link">Create Whiskeys</a>
+                        <a href="/admin/createSupplier" class="link">Create Supplier</a>
+                        <a href="/admin/createWhiskeyType" class="link">Create Whiskey Type</a>
+                        <a href="/admin/createWhiskeyAged" class="link">Create Whiskey Aged</a>
+                        <a href="/admin/createWhiskeyPresentation" class="link">Create Whiskey Presentation</a>
+                        <a href="/admin/createStock" class="link">Create Whiskey Stock</a>
+                        
+
+                      </center>
+
+                    </td>
+                </tr>
+                  <tr>
+                    <td width="210" colspan="2" height="22">
+                      <center>
+                        <button type="submit" class="checkout-button" id="checkout-button" name="checkout-button" disabled="disabled"></button>
+                        <a href="/admin/updateWhiskey" class="link">Update Whiskey</a>
+                        <a href="/admin/update" class="link">Update Whiskey Amounts</a>
+                        <a href="/admin/UpdateWhiskeySupplier" class="link">Update Whiskey Supplier</a>
+                        <a href="/admin/ModifyWhiskeyType" class="link">Update Whiskey Type</a>
+                        <a href="/admin/ModifyWhiskeyAge" class="link">Update Whiskey Aged</a>
+                        <a href="/admin/UpdateWhiskeyPresentation" class="link">Update Whiskey Presentation</a>
+                        
+
+                      </center>
+
+                    </td>
+                  </tr>
+            </tr>
+            <tr>
+              <td width="210" colspan="2" height="22">
+                <center>
+                  <button type="submit" class="checkout-button" id="checkout-button" name="checkout-button" disabled="disabled"></button>
+                  <a href="/admin/DeleteWhiskey" class="link">Delete Whiskey</a>
+                  <a href="/admin/DeleteSupplier" class="link">Delete Supplier</a>
+                  <a href="/admin/DeleteType" class="link">Delete Type</a>
+                  <a href="/admin/DeleteAge" class="link">Delete Aged</a>
+                  <a href="/admin/DeleteWhiskeyPresentation" class="link">Delete Whiskey Presentation</a>
+                  <a href="/admin/EmployeesMenu" class="link">Employees Menu</a>
+                  
+
+                </center>
+
+              </td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

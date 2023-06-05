@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "message.html" %}
+
+    <h2 class="text-center">Add to Cart</h2>
+
+    <form method="POST" class="forms">
+        <input type="text" placeholder="Name" name="name" class="entry"/>
+        <input type="text" placeholder="Amount" name="amount" class="entry"/>
+        <button class="button">Add Cart</button>
+        <a href="/PurchaseIreland" class="link">Finish Purchase</a>
+    </form>
+
+    <div class="photos-container">
+        <div class="whisky-container">
+          {% for photo in photos %}
+            {% if photo[12] == 0%}
+              <div class="whisky" data-name="{{ photo[1] }}">
+            {% else %}
+              <div class="whisky-special" data-name="{{ photo[1] }}">
+            {% endif %}
+                <img alt="{{ photo[2] }}"  src="data:image/png;base64,{{ photo[0] }}" />
+                <h3>{{ photo[2] }}</h3>
+                <div class="price">£{{ photo[5] }}</div>
+              </div>
+          {% endfor %}
+        </div>
+      </div>
+  
+      <div class="whisky-preview">
+        {% for photo in photos %}
+          <div class="preview" data-target="{{ photo[1] }}">
+            <i class="fa-solid fa-xmark"></i>
+            <img alt="{{ photo[2] }}"  src="data:image/png;base64,{{ photo[0] }}" />
+            <h3>{{ photo[2] }}</h3>
+            <div class="price">£{{ photo[5] }}</div>
+            <p>{{ photo[1] }}</p>
+            <p>
+              <strong>Type:</strong> {{ photo[3] }}
+              <strong> - Supplier:</strong> {{ photo[6] }}
+              <strong> - Aged:</strong> {{ photo[4] }}
+            </p>
+            <p>
+              <strong>Amount:</strong> {{ photo[8] }}
+            </p>
+            <p><strong>Sold:</strong> {{ photo[9] }}</p>
+          </div>
+        {% endfor %}
+      </div>
+{% endblock %}

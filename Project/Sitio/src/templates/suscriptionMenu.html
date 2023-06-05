@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Administrador{% endblock %}
+
+{% block content %}
+    <h2 class="text-center">Countries</h2>
+
+    {% include "message.html" %}
+<br>
+<div>
+
+ <input type="submit" value="Submit" id="submit-button" onClick="EnableSubmit(this)">
+ <input type = "hidden" name = "songandartist" value = "{{song_name , song_artist}}">
+    <h3  class="text-center"> Suscription Menu </h3>
+    <div class="table-container">
+        <table class="table">
+            <tr>
+                <tr>
+                    <td width="210" colspan="2" height="22">
+                      <center>
+                        <button type="submit" class="checkout-button" id="checkout-button" name="checkout-button" disabled="disabled"></button>
+                        <a href="/Suscribe" class="link">Suscribe</a>
+                        <a href="/UpdateSuscription" class="link">Update Suscription</a>
+                        <a href="/DeleteSuscription" class="link">Delete Suscription</a>
+                        <a href="/EmployeesReports" class="link">Employees Reports</a>
+                      </center>
+
+                    </td>
+                  </tr>
+                  
+            
+
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Reviews{% endblock %}
+
+{% block content %}
+    <h2 class="text-center">Admin Employees Consult</h2>
+
+    {% include "message.html" %}
+
+    <div class="reviews">
+        <div class="reviewContainer">
+            {% for review in data %}
+                <div class="review">
+                    <i class="fa-solid fa-user-pen"></i>
+                    <h2>{{ review[2] }}</h2>
+                    <div class="userDetails">
+                        <p>{{ review[1] }}<span>({{ review[0] }})</span></p>
+                    </div>
+                    <p>{{ review[3] }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}

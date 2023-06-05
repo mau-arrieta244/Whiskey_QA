@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "message.html" %}
+
+    <h2 class="text-center">Employees Reviews</h2>
+
+    <form method="POST" class="forms">
+        <input type="text" placeholder="Employees Identification" name="ident" class="entry"/>
+        <input type="integer" placeholder="Calification" name="calification" class="entry"/>
+        <input type="text" placeholder="Review" name="review" class="entry"/>
+        <button class="button">Insert Review</button>
+    </form>
+{% endblock %}

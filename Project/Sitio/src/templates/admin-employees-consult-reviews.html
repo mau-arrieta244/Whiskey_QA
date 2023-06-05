@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "message.html" %}
+
+    <h2 class="text-center">Employees Consult Review</h2>
+
+    <form method="POST" class="forms">
+       
+        <input type="text" placeholder="Calification" name="cal" class="entry"/>
+        
+        <button class="button">Consult</button>
+    </form>
+
+    <div class="table-container-products">
+        <table class="table" > 
+            <tr>
+              <th>Identification</th>
+              <th>Name</th>
+              <th>Calification</th>
+              
+            </tr>
+            {% for whisky in data %}
+              <tr>
+                <td>{{ whisky[0] }}</td>
+                <td>{{ whisky[1] }}</td>
+                <td>{{ whisky[2] }}</td>
+            
+              </tr>
+            {% endfor %}
+        </table>
+      </div>
+
+{% endblock %}

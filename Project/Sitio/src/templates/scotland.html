@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Scotland{% endblock %}
+
+{% block content %}
+    <h2 class="text-center">Whiskey Club</h2>
+
+    <h3  class="text-center"> Welcome </h3>
+    <div class="table-container">
+        <table class="table">
+            <tr>
+                <tr>
+                    <td width="210" colspan="2" height="22">  
+                      <center>
+                        <a href="/Scotland/store1" class="link">{{ names[0][0] }}</a>
+                        <a href="/Scotland/store2" class="link">{{ names[1][0] }}</a>
+                        <a href="/Scotland/store3" class="link">{{ names[2][0] }}</a>
+
+                        <a href="/UnitedStates" class="link">Map</a>
+                    
+                      </center>
+              
+                    </td>
+                  </tr>
+            </tr>
+           
+        </table>
+    </div>
+
+
+    <div class="photos-container">
+      <div class="whisky-container">
+        {% for photo in photos %}
+          {% if photo[12] == 0%}
+            <div class="whisky" data-name="{{ photo[1] }}">
+          {% else %}
+            <div class="whisky-special" data-name="{{ photo[1] }}">
+          {% endif %}
+              <img alt="{{ photo[2] }}"  src="data:image/png;base64,{{ photo[0] }}" />
+              <h3>{{ photo[2] }}</h3>
+              <div class="price">£{{ photo[5] }}</div>
+            </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="whisky-preview">
+      {% for photo in photos %}
+        <div class="preview" data-target="{{ photo[1] }}">
+          <i class="fa-solid fa-xmark"></i>
+          <img alt="{{ photo[2] }}"  src="data:image/png;base64,{{ photo[0] }}" />
+          <h3>{{ photo[2] }}</h3>
+          <div class="price">£{{ photo[5] }}</div>
+          <p>{{ photo[1] }}</p>
+          <p>
+            <strong>Type:</strong> {{ photo[3] }}
+            <strong> - Supplier:</strong> {{ photo[6] }}
+            <strong> - Aged:</strong> {{ photo[4] }}
+          </p>
+          <p>
+            <strong>{{ names[0][0] }}:</strong> {{ photo[8] }}
+            <strong> - {{ names[1][0] }}:</strong> {{ photo[9] }}
+            <strong> - {{ names[2][0] }}:</strong> {{ photo[10] }}
+          </p>
+          <p><strong>Sold:</strong> {{ photo[11] }}</p>
+        </div>
+      {% endfor %}
+    </div>
+{% endblock %}

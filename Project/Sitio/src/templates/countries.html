@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Countries{% endblock %}
+
+{% block content %}
+    {% include "message.html" %}
+
+    <h2 class="text-center">Countries</h2>
+    
+    <h3  class="text-center"> Select The Country You Want to Buy </h3>
+    <div class="table-container">
+      <table class="table">
+        <td width="210" colspan="2" height="22">  
+          <center>
+            <a href="/Scotland" class="link">Scotland</a>
+            <a href="/UnitedStates" class="link">United States</a>
+            <a href="/Ireland" class="link">Ireland</a>
+            <a href="/SuscriptionMenu" class="link">Suscription</a>
+            <a href="/Reviews" class="link">Reviews</a>
+            <a href="/employeesReviews" class="link">Employees</a>
+            
+          </center>
+        </td>
+      </table>
+    </div>
+
+    <div class="photos-container">
+      <div class="whisky-container">
+        {% for photo in photos %}
+          {% if photo[12] == 0%}
+            <div class="whisky" data-name="{{ photo[1] }}">
+          {% else %}
+            <div class="whisky-special" data-name="{{ photo[1] }}">
+          {% endif %}
+              <img alt="{{ photo[2] }}"  src="data:image/png;base64,{{ photo[0] }}" />
+              <h3>{{ photo[2] }}</h3>
+              <div class="price">${{ photo[5] }}</div>
+            </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% include "filters.html" %}
+
+    <div class="whisky-preview">
+      {% for photo in photos %}
+        <div class="preview" data-target="{{ photo[1] }}">
+          <i class="fa-solid fa-xmark"></i>
+          <img alt="{{ photo[2] }}"  src="data:image/png;base64,{{ photo[0] }}" />
+          <h3>{{ photo[2] }}</h3>
+          <div class="price">${{ photo[5] }}</div>
+          <p>{{ photo[1] }}</p>
+          <p>
+            <strong>Type:</strong> {{ photo[3] }}
+            <strong> - Supplier:</strong> {{ photo[6] }}
+            <strong> - Aged:</strong> {{ photo[4] }}
+          </p>
+          <p>
+            <strong>USA:</strong> {{ photo[8] }}
+            <strong> - Ireland:</strong> {{ photo[9] }}
+            <strong> - Scotland:</strong> {{ photo[10] }}
+          </p>
+          <p><strong>Sold:</strong> {{ photo[11] }}</p>
+        </div>
+      {% endfor %}
+    </div>
+      
+{% endblock %}

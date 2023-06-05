@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Administrador{% endblock %}
+
+{% block content %}
+    <h2 class="text-center">Purchase Succesfully </h2>
+
+    <form method="POST" class="forms">
+        <input type="text" placeholder="Whiskey Name" name="name" class="entry"/>
+        <input type="text" placeholder="Review" name="review" class="entry"/>
+        <button class="button">Send Review</button>
+    </form>
+    {% include "message.html" %}
+<br>
+
+{% endblock %}

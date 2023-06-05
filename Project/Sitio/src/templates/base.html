@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css"/>
+    <script src="https://kit.fontawesome.com/a47ace5a05.js" crossorigin="anonymous"></script>
+    <script src="/static/previews.js" defer></script> 
+</head>
+<body class="body">
+    <div class="menu">
+        <h2 class="d-ib">Whiskey Club</h2>
+        {% if not auth.clientLogged and not auth.adminLogged %}
+            <a href="/signup" class="link">Sign Up</a>
+
+        {% elif auth.adminLogged %}
+            <a href="/admin" class="link">Home</a>
+            <a href="/admin/consult" class="link">Consult</a>
+            <a href="/logOut" class="link">Log Out</a>
+        {% else %}
+            <a href="/countries" class="link">Home</a>
+            <a href="/logOut" class="link">Log Out</a>
+        {% endif %}
+
+    </div>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

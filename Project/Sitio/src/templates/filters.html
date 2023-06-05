@@ -1,0 +1,29 @@
+<div class="filters-container">
+    <h2 class="text-center">Filters</h2>
+
+    <form method="POST" class="forms">
+
+      <label for="types">Type: </label>
+      <select name="types" id="types" required>
+        <option value="NULL" selected>All</option>
+        {% for type in types%}
+          <option value="{{ type[1] }}">{{ type[1] }}</option>
+        {% endfor %}
+      </select>
+
+      <p>Name: <input type="text" name="name"></p>
+
+      <p><center>Price:</center></p>
+      <div class="priceMM">
+        <p>Min: <input type="number" name="min" value="0">
+          Max: <input type="number" name="max" value="10000">
+        </p>
+      </div>
+
+      <div class="priceMM">
+        <p>Aged: <input type="text" name="age" value="0"></p>
+      </div>
+
+      <button class="submit">Apply</button>
+    </form>
+  </div>

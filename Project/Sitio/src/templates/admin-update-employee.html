@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "message.html" %}
+
+    <h2 class="text-center">Update Employees</h2>
+
+
+    <form method="POST" class="forms">
+        <input type="text" placeholder="Name" name="name" class="entry"/>
+        <input type="text" placeholder="Adress" name="adress" class="entry"/>
+        <input type="text" placeholder="Identification" name="ident" class="entry"/>
+        <input type="text" placeholder="Phone" name="phone" class="entry"/>
+        <input type="text" placeholder="Email" name="email" class="entry"/>
+        <input type="integer" placeholder="Salary" name="salary" class="entry"/>
+        <input type="integer" placeholder="Position Id" name="position_id" class="entry"/>
+
+
+        <button class="button">Update</button>
+
+    </form>
+{% endblock %}

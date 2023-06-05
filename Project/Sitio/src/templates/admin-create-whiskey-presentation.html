@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "message.html" %}
+
+    <h2 class="text-center">Create Presentation</h2>
+
+    <form method="POST" class="forms">
+        <input type="text" placeholder="Presentation Name" name="presentation" class="entry"/>
+        <button class="button">Create Presentation</button>
+    </form>
+{% endblock %}

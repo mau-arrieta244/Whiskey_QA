@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Consults{% endblock %}
+
+{% block content %}
+    {% include "message.html" %}
+
+    <h2 class="text-center">Consult</h2>
+    <div class="table-container">
+      <table class="table">
+        <td width="210" colspan="2" height="22">  
+          <center>
+            <a href="/admin/consult/products/purchases" class="link">Purchases</a>
+          </center>
+        </td>
+      </table>
+    </div>
+
+    <div class="consult">
+      <div class="table-container-products">
+        <table class="table" > 
+            <tr>
+              <th>Code</th>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Age</th>
+              <th>Price</th>
+              <th>Supplier</th>
+              <th>Stock USA</th>
+              <th>Stock Ireland</th>
+              <th>Stock Scotland</th>
+              <th>Total Stock</th>
+              <th>Sold</th>
+            </tr>
+            {% for whisky in whiskys %}
+              <tr>
+                <td>{{ whisky[1] }}</td>
+                <td>{{ whisky[2] }}</td>
+                <td>{{ whisky[3] }}</td>
+                <td>{{ whisky[4] }}</td>
+                <td>{{ whisky[5] }}</td>
+                <td>{{ whisky[6] }}</td>
+                <td>{{ whisky[8] }}</td>
+                <td>{{ whisky[9] }}</td>
+                <td>{{ whisky[10] }}</td>
+                <td>{{ whisky[11] }}</td>
+                <td>{{ whisky[12] }}</td>
+              </tr>
+            {% endfor %}
+        </table>
+      </div>
+  
+      <div class="filters-container">
+        <h2 class="text-center">Filters</h2>
+    
+        <form method="POST" class="forms">
+    
+          <label for="types">Type: </label>
+          <select name="types" id="types" required>
+            <option value="NULL" selected>All</option>
+            {% for type in types%}
+              <option value="{{ type[1] }}">{{ type[1] }}</option>
+            {% endfor %}
+          </select>
+  
+          <div class="priceMM">
+            <p>Stock: <input type="text" name="amount" value="0"></p>
+          </div>
+  
+          <div class="priceMM">
+            <p>Sold: <input type="text" name="sold" value="0"></p>
+          </div>
+    
+          <button class="submit">Apply</button>
+        </form>
+      </div>
+    </div>
+      
+{% endblock %}

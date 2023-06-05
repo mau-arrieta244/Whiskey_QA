@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Countries{% endblock %}
+
+{% block content %}
+    {% include "message.html" %}
+
+    <h2 class="text-center">Admin</h2>
+    
+    <h3  class="text-center"> Select The Country You Want to Update </h3>
+    <div class="table-container">
+      <table class="table">
+        <td width="210" colspan="2" height="22">  
+          <center>
+            <a href="/admin/update/scotland" class="link">Scotland</a>
+            <a href="/admin/update/usa" class="link">United States</a>
+            <a href="/admin/update/ireland" class="link">Ireland</a>
+          </center>
+        </td>
+      </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "message.html" %}
+
+    <h2 class="text-center">Employees Consult</h2>
+
+    <form method="POST" class="forms">
+        <input type="integer" placeholder="Position Id" name="pos_id" class="entry"/>
+        <input type="text" placeholder="Salary" name="salary" class="entry"/>
+        
+        <button class="button">Consult</button>
+    </form>
+
+    <div class="table-container-products">
+        <table class="table" > 
+            <tr>
+              <th>Name</th>
+              <th>Shop Id</th>
+              <th>Adress</th>
+              <th>Identification</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Salary USA</th>
+              <th>Position Ireland</th>
+              <th>Country</th>
+            </tr>
+            {% for whisky in data %}
+              <tr>
+                <td>{{ whisky[0] }}</td>
+                <td>{{ whisky[1] }}</td>
+                <td>{{ whisky[2] }}</td>
+                <td>{{ whisky[3] }}</td>
+                <td>{{ whisky[4] }}</td>
+                <td>{{ whisky[5] }}</td>
+                <td>{{ whisky[6] }}</td>
+                <td>{{ whisky[7] }}</td>
+                <td>{{ whisky[8] }}</td>
+              </tr>
+            {% endfor %}
+        </table>
+      </div>
+
+{% endblock %}
